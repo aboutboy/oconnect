@@ -2,7 +2,8 @@
 angular.module('login', [
   'ngCordova',
   'ui.router',
-  'angular-storage'
+  'angular-storage',
+  'openwrt'
 ])
   .config(function ($stateProvider) {
 
