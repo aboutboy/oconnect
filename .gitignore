@@ -1,0 +1,9 @@
+.idea
+.tmp
+.DS_Store
+app/bower_components
+node_modules
+platforms
+plugins
+www
+hooks
