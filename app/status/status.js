@@ -14,6 +14,9 @@ angular.module('status', [
       .state('app.status', {
         url: '/status',
         templateUrl : 'status/templates/status.html',
-        controller: 'StatusCtrl'
+        controller: 'StatusCtrl',
+        data: {
+          pageTitle : "Status"
+        }
       })
   });

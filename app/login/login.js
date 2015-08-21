@@ -10,7 +10,7 @@ angular.module('login', [
 
     // some basic routing
     $stateProvider
-      .state('login', {
+      .state('app.login', {
         url: '/login',
         templateUrl: 'login/templates/login.html',
         controller: 'LoginCtrl',
@@ -18,7 +18,7 @@ angular.module('login', [
           pageTitle: 'Welcome'
         }
       })
-      .state('logout', {
+      .state('app.logout', {
         url: '/logout',
         controller: 'LogoutCtrl'
       });
