@@ -1,1 +1,1 @@
-angular.module('openwrt', ['ngResource']);
+angular.module('openwrt', ['angular-storage']);
