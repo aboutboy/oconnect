@@ -8,7 +8,7 @@ OpenWRT router management at your finger tips.
   
 # Public release
 
-There is no public release available yet. If you are interested at testing please build one your self or drop a mail at ocbeta at vert.agency
+There is no public release available yet. If you are interested at testing please build one your self or drop a mail at <ocbeta@vert.agency>
 
 # Development Setup
 
