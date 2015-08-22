@@ -16,9 +16,9 @@ install:
 - sudo npm -g install cordova bower gulp
 - sudo npm i
 - bower i
+- cd $TRAVIS_BUILD_DIR && cordova prepare
 before_script:
 - echo "Before script stage"
-- cordova prepare
 script:
 - echo "Script stage"
 - gulp clean && gulp --cordova "build android"
