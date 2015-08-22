@@ -1,6 +1,6 @@
-# oConnect
+# oConnect 
 OpenWRT router management at your finger tips.
-
+![Build Status](https://travis-ci.org/vertinteractive/oconnect.svg?branch=master)
 
 # What's going on?
  * Android Support Only
