@@ -10,12 +10,12 @@ angular.module('status').controller('StatusCtrl', function ($scope, Owrt) {
 
   });
   Owrt.sys('hostname', []).success(function (res) {
-    console.log(res.result);
+    console.log(res);
     $scope.status.hostname = res.result;
   });
 
   Owrt.sys('wifi.iwscan').success(function (res) {
-    console.log(res.result);
+    console.log(res);
     $scope.status.wireless = res.result;
   });
 });
