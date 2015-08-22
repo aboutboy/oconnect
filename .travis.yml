@@ -1,0 +1,31 @@
+
+language: android
+android:
+components:
+- build-tools-22.0.1
+- android-22
+env:
+global:
+before_install:
+- echo "Before install stage"
+install:
+- echo "Install stage"
+- sudo apt-get install -y python-software-properties
+- curl --silent --location https://deb.nodesource.com/setup_0.12 | sudo bash -
+- sudo apt-get install -y nodejs
+- sudo npm -g install cordova bower gulp
+- npm i
+- bower i
+before_script:
+- echo "Before script stage"
+script:
+- echo "Script stage"
+- cordova prepare
+- gulp clean && gulp --cordova "build android"
+after_success:
+- echo "Build success"
+after_failure:
+- echo "After failure stage"
+after_script:
+- echo "After script stage"
+
