@@ -1,5 +1,5 @@
 # oConnect
-OpenWRT router management at your finger tips
+OpenWRT router management at your finger tips.
 
 
 # What's going on?
@@ -10,7 +10,7 @@ OpenWRT router management at your finger tips
 
 There is no public release available yet. If you are interested at testing please build one your self or drop a mail at ocbeta at vert.agency
 
-# Developement Setup
+# Development Setup
 
 ###Prequesites
  * Apache Cordova 5.x
@@ -18,6 +18,9 @@ There is no public release available yet. If you are interested at testing pleas
  * Bower
  * Android SDK
  * Gulp
+ * OpenWRT based system
+
+*For used libraries and frameworks please refer to bower.json file in this repository.*
 
 ###Setup
 ```
@@ -26,7 +29,7 @@ cordova prepare
 ```
 
 ###Build
-Devolopement Live reload server
+Development live reload server
 ```
 gulp watch
 ```
@@ -41,7 +44,11 @@ Build a run in device
 gulp clean && gulp --cordova "run android --device
 ```
 
-For used libaries and frameworks please have a look at bower.json file.
+###Router
+```
+opkg update
+opkg install luci-mod-rpc
+```
 
 #License
 
