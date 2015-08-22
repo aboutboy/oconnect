@@ -1,6 +1,6 @@
 # oConnect 
 
-![Build Status](https://travis-ci.org/vertinteractive/oconnect.svg?branch=master)
+[![Build Status](https://travis-ci.org/vertinteractive/oconnect.svg?branch=master)](https://travis-ci.org/vertinteractive/oconnect)
 
 OpenWRT router management at your finger tips.
 
