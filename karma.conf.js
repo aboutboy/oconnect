@@ -10,20 +10,28 @@ module.exports = function(config) {
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['jasmine'],
+    frameworks: ['jasmine', 'angular-filesort'],
 
 
     // list of files / patterns to load in the browser
     files: [
-      'app/**/*.js',
-      'bower_components/angular-mocks/angular-mocks.js',
       'bower_components/angular/angular.js',
+      'bower_components/angular-mocks/angular-mocks.js',
+      'bower_components/angular-ui-router/release/angular-ui-router.js',
       'bower_components/a0-angular-storage/dist/angular-storage.js',
       'bower_components/angular-material/angular-material.js',
-      'bower_components/angular-ui-router/release/angular-ui-router.js',
       'bower_components/ngCordova/dist/ng-cordova.js',
-      'bower_components/ngCordova/dist/ng-cordova-mocks.js'
+      'bower_components/ngCordova/dist/ng-cordova-mocks.js',
+      'bower_components/angular-animate/angular-animate.js',
+      'bower_components/angular-aria/angular-aria.js',
+      'app/**/*.js',
+      'tests/**/*.test.js'
     ],
+    angularFilesort: {
+      whitelist: [
+        'app/**/*.js'
+      ]
+    },
 
 
     // list of files to exclude
@@ -53,7 +61,7 @@ module.exports = function(config) {
 
     // level of logging
     // possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
-    logLevel: config.LOG_INFO,
+    logLevel: config.LOG_WARN,
 
 
     // enable / disable watching file and executing tests whenever any file changes
@@ -62,7 +70,7 @@ module.exports = function(config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: [],
+    browsers: ['PhantomJS'],
 
 
     // Continuous Integration mode
