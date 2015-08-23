@@ -18,9 +18,12 @@ var createConnectServer = function (paths) {
   return function () {
     var app = connect()
     .use(connectLiveReload({port: 35729}));
+
     for (var key in paths) {
       app.use(serveStatic(paths[key]));
     }
+    app.use(serveStatic('./bower_components'));
+
     http.createServer(app)
       .listen(9000)
       .on('listening', function () {
