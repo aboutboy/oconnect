@@ -29,6 +29,20 @@ options.env = options.env || 'dev';
 var requireDir = require('require-dir');
 requireDir('./gulp_tasks');
 
+'use strict';
+var Server = require('karma').Server;
+
+/**
+ * Run test once and exit
+ */
+gulp.task('test', function (done) {
+  new Server({
+    configFile: __dirname + '/karma.conf.js',
+    singleRun: true
+  }, done).start();
+});
+
+
 // MAIN TASKS
 gulp.task('default', function () {
   // cordova with build

@@ -1,7 +1,7 @@
 .idea
 .tmp
 .DS_Store
-app/bower_components
+bower_components
 node_modules
 platforms
 plugins

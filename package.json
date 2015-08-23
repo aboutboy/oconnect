@@ -3,6 +3,12 @@
   "engines": {
     "node": ">=0.10.0"
   },
+"scripts" : {
+  "test" : "gulp test",
+  "start" : "gulp watch",
+  "build" : "gulp clean && gulp --cordova 'build'",
+  "device" : "gulp clean && gulp --cordova 'run android --device'"
+},
   "devDependencies": {
     "connect": "^3.3.4",
     "connect-livereload": "^0.5.3",
@@ -19,6 +25,7 @@
     "gulp-jscs": "^1.4.0",
     "gulp-jshint": "^1.9.2",
     "gulp-jsonlint": "^1.0.2",
+    "gulp-less": "^3.0.3",
     "gulp-livereload": "^3.8.0",
     "gulp-load-plugins": "^0.8.0",
     "gulp-minify-html": "^1.0.0",
@@ -30,16 +37,19 @@
     "gulp-uglify": "^1.1.0",
     "gulp-useref": "^1.1.1",
     "jshint-stylish": "^1.0.1",
+    "karma": "^0.13.0",
+    "karma-angular-filesort": "git://github.com/marshall007/karma-angular-filesort.git#karma-v0.13.x",
+    "karma-jasmine": "~0.2.0",
+    "karma-phantomjs-launcher": "^0.2.1",
     "main-bower-files": "^2.5.0",
     "minimist": "^1.1.0",
     "opn": "^1.0.1",
+    "phantomjs": "^1.9.18",
     "require-dir": "^0.1.0",
     "serve-static": "^1.9.1",
     "vinyl-paths": "^1.0.0",
     "wiredep": "^2.2.2",
-    "xml2js": "^0.4.5",
-    "gulp-less": "^3.0.3"
+    "xml2js": "^0.4.5"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }

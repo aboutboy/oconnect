@@ -20,8 +20,10 @@ install:
 before_script:
 - echo "Before script stage"
 script:
-- echo "Script stage"
-- gulp --cordova "build android"
+- echo "Running tests"
+- npm test
+- echo "Starting build"
+- npm run build
 after_success:
 - echo "Build success"
 after_failure:

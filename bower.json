@@ -12,7 +12,8 @@
     "a0-angular-storage": "~0.0.11",
     "angular-jwt": "~0.0.9",
     "sio-client": "~1.3.6",
-    "angular-resource": "~1.4.4"
+    "angular-resource": "~1.4.4",
+    "angular-mocks": "~1.4.4"
   },
   "devDependencies": {},
   "resolutions": {

@@ -48,7 +48,9 @@ gulp.task('styles', function () {
 // inject bower components
 gulp.task('wiredep', function () {
   return gulp.src('app/index.html') // into index.html
-    .pipe(wiredep.stream())
+    .pipe(wiredep.stream({
+      ignorePath : "../bower_components/"
+    }))
     .pipe(gulp.dest('app'));
 });
 
