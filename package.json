@@ -6,7 +6,8 @@
 "scripts" : {
   "test" : "gulp test",
   "start" : "gulp watch",
-  "build" : "gulp clean && gulp --cordova 'build'"
+  "build" : "gulp clean && gulp --cordova 'build'",
+  "device" : "gulp clean && gulp --cordova 'run android --device'"
 },
   "devDependencies": {
     "connect": "^3.3.4",

@@ -33,17 +33,17 @@ cordova prepare
 ###Build
 Development live reload server
 ```
-gulp watch
+npm start
 ```
 
 Build a debug version
 ```
-gulp clean && gulp --cordova "build"
+npm run build
 ```
 
 Build a run in device
 ```
-gulp clean && gulp --cordova "run android --device
+npm run device
 ```
 
 ###Router
