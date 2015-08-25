@@ -1,5 +1,5 @@
 'use strict';
-angular.module('login').controller('LoginCtrl', function ($scope, store, Owrt) {
+angular.module('login').controller('LoginCtrl', function ($scope, store, Owrt, $state) {
   $scope.user = {
     name: 'root',
     password: 'notconnected'
@@ -10,6 +10,7 @@ angular.module('login').controller('LoginCtrl', function ($scope, store, Owrt) {
       console.log(res);
       if (!res.error) {
         store.set('token', res.result);
+        $state.go('app.status');
       }
     });
   };
