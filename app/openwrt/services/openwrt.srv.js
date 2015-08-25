@@ -49,7 +49,7 @@ angular.module('openwrt').factory('Owrt', function ($http) {
     }
     //TODO: uci service
   };
-}).factory('httpRequestInterceptor', function (store) {
+}).factory('httpRequestInterceptor', function (store, $q) {
   return {
     request: function (config) {
       //Authentication Interceptor
@@ -64,7 +64,15 @@ angular.module('openwrt').factory('Owrt', function ($http) {
         }
       }
       return config;
+    },
+    responseError : function (rejection) {
+      if (rejection.status === 403) {
+        store.set('token', null);
+      }
+
+      return $q.reject(rejection);
     }
+
   };
 }).config(function ($httpProvider) {
   $httpProvider.interceptors.push('httpRequestInterceptor');

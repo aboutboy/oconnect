@@ -15,7 +15,8 @@ angular.module('status', [
         templateUrl: 'status/templates/status.html',
         controller: 'StatusCtrl',
         data: {
-          pageTitle: 'Status'
+          pageTitle: 'Status',
+          requiresLogin : true
         }
       });
   });

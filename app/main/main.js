@@ -15,6 +15,10 @@ angular.module('main', [
         url: '/app',
         abstract: true,
         templateUrl: 'main/templates/sidebar.html',
-        controller: 'MainCtrl'
+        controller: 'MainCtrl',
+        data : {
+          pageTitle: 'Main',
+          requiresLogin: true
+        }
       });
   });
