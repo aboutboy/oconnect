@@ -31,7 +31,7 @@ gulp.task('clean', function () {
 // concatenate files in build:blocks inside index.html
 // and copy to build folder destinations
 gulp.task('build-app', ['clean', 'inject-all'], function () {
-  var assets = $.useref.assets({searchPath: '{.tmp,app}'});
+  var assets = $.useref.assets({searchPath: '{.tmp,app,bower_components}'});
   var jsFilter = $.filter('**/*.js');
   var cssFilter = $.filter('**/*.css');
 
