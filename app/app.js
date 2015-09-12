@@ -8,7 +8,14 @@ angular.module('oc', [
   'angular-storage'
 ]).config(function ($urlRouterProvider) {
 
-  $urlRouterProvider.otherwise('/app/status');
+  //$urlRouterProvider.otherwise('/app/status');
+  //https://github.com/angular-ui/ui-router/issues/600
+
+  $urlRouterProvider.otherwise( function($injector, $location) {
+    var $state = $injector.get("$state");
+    $state.go("app.status");
+  });
+
 
 }).run(function ($rootScope, store, $state) {
   //Set page title on route change
@@ -21,10 +28,11 @@ angular.module('oc', [
     if (nextstate.data && nextstate.data.requiresLogin) {
       var token = store.get('token');
       if (!token) {
-        e.preventDefault();
-        console.log("Token Invalid");
+        console.log(nextstate.data);
+        console.log('Token Invalid');
         console.log('Redirecting..');
-        $state.go('app.login');
+        e.preventDefault();
+        $state.go('login');
       }
     }
   });
