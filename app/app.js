@@ -8,7 +8,7 @@ angular.module('oc', [
   'angular-storage'
 ]).config(function ($urlRouterProvider) {
 
-  $urlRouterProvider.otherwise('/app/login');
+  $urlRouterProvider.otherwise('/login');
 
 }).run(function ($rootScope, store, $state) {
   //Set page title on route change
