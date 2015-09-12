@@ -16,7 +16,7 @@ angular.module('main', [
         abstract: true,
         templateUrl: 'main/templates/sidebar.html',
         controller: 'MainCtrl',
-        data : {
+        data: {
           pageTitle: 'Main',
           requiresLogin: true
         }

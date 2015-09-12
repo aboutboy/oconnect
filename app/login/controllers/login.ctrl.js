@@ -9,7 +9,7 @@ angular.module('login').controller('LoginCtrl', function ($scope, store, Owrt, $
     console.log(store.get('host'));
 
     if (!$scope.user.name && !$scope.user.pasword) {
-      console.log("Credentials invalid?");
+      console.log('Credentials invalid?');
       return false;
     }
 

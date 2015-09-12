@@ -16,7 +16,7 @@ angular.module('status', [
         controller: 'StatusCtrl',
         data: {
           pageTitle: 'Status',
-          requiresLogin : true
+          requiresLogin: true
         }
       });
   });

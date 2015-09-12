@@ -7,15 +7,14 @@
 angular.module('openwrt').factory('Owrt', function ($http, store) {
   var baseUrl = store.get('host');
 
-  if(!(/^htt(p|ps):\/\//).test(baseUrl))
-  {
-     baseUrl = 'http://' + baseUrl;
+  if (!(/^htt(p|ps):\/\//).test(baseUrl)) {
+    baseUrl = 'http://' + baseUrl;
   }
 
   var rpc = function (module) {
     //Check if hostname contains http:// url scheme
 
-      return baseUrl + '/cgi-bin/luci/rpc/' + module;
+    return baseUrl + '/cgi-bin/luci/rpc/' + module;
 
   };
 

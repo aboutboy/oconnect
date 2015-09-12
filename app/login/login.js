@@ -17,7 +17,7 @@ angular.module('login', [
         controller: 'LoginCtrl',
         data: {
           pageTitle: 'Welcome',
-          requiresLogin : false
+          requiresLogin: false
         }
       })
       .state('app.logout', {
