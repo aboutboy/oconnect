@@ -13,12 +13,11 @@ angular.module('openwrt').factory('Owrt', function ($http, store) {
 
   var rpc = function (module) {
     //Check if hostname contains http:// url scheme
-
     return baseUrl + '/cgi-bin/luci/rpc/' + module;
-
   };
 
   return {
+    //RPC service vi Owrt.rpc()
     rpc: function (module, func, params) {
       return $http({
         method: 'POST',
@@ -29,7 +28,6 @@ angular.module('openwrt').factory('Owrt', function ($http, store) {
         }
       });
     }
-    //TODO: uci service
   };
 }).factory('httpRequestInterceptor', function (store, $q) {
   return {
@@ -41,7 +39,7 @@ angular.module('openwrt').factory('Owrt', function ($http, store) {
         //Get token stored by angular-storage
         if (store.get('token')) {
 
-          //Add it is a get paramet in URL
+          //Add it is a get parameter in URL
           config.url = config.url + '?auth=' + store.get('token');
         }
       }

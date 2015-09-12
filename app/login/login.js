@@ -7,9 +7,7 @@ angular.module('login', [
 ])
   .config(function ($stateProvider) {
 
-    console.log('Allo! Allo from your module: ' + 'login');
-
-    // some basic routing
+    //routing
     $stateProvider
       .state('login', {
         url: '/login',

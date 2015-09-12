@@ -7,9 +7,7 @@ angular.module('main', [
 ])
   .config(function ($stateProvider) {
 
-    console.log('Allo! Allo from your module: ' + 'main');
-
-    // some basic routing
+    //routing
     $stateProvider
       .state('app', {
         url: '/app',
