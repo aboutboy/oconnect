@@ -7,7 +7,6 @@ angular.module('oc', [
   'ui.router',
   'angular-storage'
 ]).config(function ($urlRouterProvider) {
-
   //$urlRouterProvider.otherwise('/app/status');
   //https://github.com/angular-ui/ui-router/issues/600
 
