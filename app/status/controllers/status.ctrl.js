@@ -7,7 +7,6 @@ angular.module('status').controller('StatusCtrl', function ($scope, Owrt) {
     $scope.status.device.name = res.result[1];
     $scope.status.device.memory = res.result[2];
     $scope.status.device.free = res.result[5];
-
   });
   Owrt.sys('hostname', []).success(function (res) {
     console.log(res);
@@ -18,4 +17,10 @@ angular.module('status').controller('StatusCtrl', function ($scope, Owrt) {
     console.log(res);
     $scope.status.wireless = res.result;
   });
+
+
+  $scope.reboot = function () {
+    Owrt.sys('reboot');
+    $scope.initiated = true;
+  };
 });
