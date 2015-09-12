@@ -3,11 +3,15 @@
         <md-content>
             <form style="padding: 20px;">
                 <div class="row">
-                    <md-input-container><label>User Name</label><input ng-model="user.name"/>
+                    <md-input-container><label>Router IP</label><input ng-model="host" name="host"/>
                     </md-input-container>
                 </div>
                 <div class="row">
-                    <md-input-container><label>Password</label><input ng-model="user.password" type="password"/></md-input-container>
+                    <md-input-container><label>User Name</label><input ng-model="user.name" name="username"/>
+                    </md-input-container>
+                </div>
+                <div class="row">
+                    <md-input-container><label>Password</label><input ng-model="user.password" type="password" name="password"/></md-input-container>
                 </div>
                 <div class="row">
                     <md-input-container>
