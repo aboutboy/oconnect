@@ -1,14 +1,13 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.vert.oc" version="0.1.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>oConnect</name>
+    <name>Oconnect</name>
     <description>
         OpenWRT router management at your finger tips
     </description>
-    <author email="dev@vert.agency" href="http://vert.agecy/oconnect">
-        Apache Cordova Team
+    <author email="oc@vert.agency" href="http://vert.agecy">
+        Vert Interactive
     </author>
     <content src="index.html" />
-    <plugin name="cordova-plugin-whitelist" version="1" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
@@ -17,6 +16,7 @@
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
     <platform name="android">
+        <preference name="StatusBarBackgroundColor" value="#00786a" />
         <allow-intent href="market:*" />
         <icon density="mdpi" src="res/mipmap-mdpi/ic_launcher.png" />
         <icon density="hdpi" src="res/mipmap-hdpi/ic_launcher.png" />
@@ -25,4 +25,6 @@
         <icon density="xxxhdpi" src="res/mipmap-xxxhdpi/ic_launcher.png" />
     </platform>
     <engine name="android" spec="~4.1.1" />
+    <plugin name="cordova-plugin-statusbar" spec="~1.0.1" />
+    <plugin name="cordova-plugin-whitelist" spec="~1.0.0" />
 </widget>
