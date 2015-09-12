@@ -1,26 +1,11 @@
 'use strict';
 angular.module('status').controller('StatusCtrl', function ($scope, Owrt) {
   $scope.status = {};
-  $scope.status.device = {};
-  Owrt.sys('sysinfo', []).success(function (res) {
-    console.log(res.result);
-    $scope.status.device.name = res.result[1];
-    $scope.status.device.memory = res.result[2];
-    $scope.status.device.free = res.result[5];
-  });
-  Owrt.sys('hostname', []).success(function (res) {
-    console.log(res);
-    $scope.status.hostname = res.result;
-  });
-
-  Owrt.sys('wifi.iwscan').success(function (res) {
-    console.log(res);
-    $scope.status.wireless = res.result;
-  });
 
 
-  $scope.reboot = function () {
-    Owrt.sys('reboot');
-    $scope.initiated = true;
-  };
+  Owrt.rpc('sys', 'exec', ["ubus call system info"])
+    .success(function (response) {
+      $scope.status = JSON.parse(response.result);
+      console.log($scope.status);
+    });
 });
