@@ -8,7 +8,7 @@ angular.module('oc', [
   'angular-storage'
 ]).config(function ($urlRouterProvider) {
 
-  $urlRouterProvider.otherwise('/app/login');
+  $urlRouterProvider.otherwise('/app/status');
 
 }).run(function ($rootScope, store, $state) {
   //Set page title on route change
@@ -22,7 +22,7 @@ angular.module('oc', [
       var token = store.get('token');
       if (!token) {
         e.preventDefault();
-        console.log(token);
+        console.log("Token Invalid");
         console.log('Redirecting..');
         $state.go('app.login');
       }

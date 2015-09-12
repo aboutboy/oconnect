@@ -11,7 +11,7 @@ angular.module('login', [
 
     // some basic routing
     $stateProvider
-      .state('app.login', {
+      .state('login', {
         url: '/login',
         templateUrl: 'login/templates/login.html',
         controller: 'LoginCtrl',
