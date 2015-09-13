@@ -1,53 +1,33 @@
 /*
-@name OpenWRT Luci JSON-RPC API Service for Angular.js
-@author Sabbir Ahmed <mail@thesabbir.com>
+ @name OpenWRT Luci JSON-RPC API Service for Angular.js
+ @author Sabbir Ahmed <mail@thesabbir.com>
  */
 
 'use strict';
-angular.module('openwrt').factory('Owrt', function ($http) {
-  var baseUrl = 'http://192.168.1.1/cgi-bin/luci/rpc';
+angular.module('openwrt').factory('Owrt', function ($http, store) {
+  var baseUrl = store.get('host');
+
+  if (!(/^htt(p|ps):\/\//).test(baseUrl)) {
+    baseUrl = 'http://' + baseUrl;
+  }
+
+  var rpc = function (module) {
+    //Check if hostname contains http:// url scheme
+    return baseUrl + '/cgi-bin/luci/rpc/' + module;
+  };
+
   return {
-    login: function (data) {
+    //RPC service vi Owrt.rpc()
+    rpc: function (module, func, params) {
       return $http({
         method: 'POST',
-        url: baseUrl + '/auth',
-        data: {
-          'method': 'login',
-          'params': [data.name, data.password]
-        }
-      });
-    },
-    sys: function (func, params) {
-      return $http({
-        method: 'POST',
-        url: baseUrl + '/sys',
-        data: {
-          'method': func,
-          'params': params
-        }
-      });
-    },
-    opkg: function (func, params) {
-      return $http({
-        method: 'POST',
-        url: baseUrl + '/ipkg',
-        data: {
-          'method': func,
-          'params': params
-        }
-      });
-    },
-    fs: function (func, params) {
-      return $http({
-        method: 'POST',
-        url: baseUrl + '/fs',
+        url: rpc(module),
         data: {
           'method': func,
           'params': params
         }
       });
     }
-    //TODO: uci service
   };
 }).factory('httpRequestInterceptor', function (store, $q) {
   return {
@@ -59,13 +39,13 @@ angular.module('openwrt').factory('Owrt', function ($http) {
         //Get token stored by angular-storage
         if (store.get('token')) {
 
-          //Add it is a get paramet in URL
+          //Add it is a get parameter in URL
           config.url = config.url + '?auth=' + store.get('token');
         }
       }
       return config;
     },
-    responseError : function (rejection) {
+    responseError: function (rejection) {
       if (rejection.status === 403) {
         store.set('token', null);
       }

@@ -7,16 +7,14 @@ angular.module('main', [
 ])
   .config(function ($stateProvider) {
 
-    console.log('Allo! Allo from your module: ' + 'main');
-
-    // some basic routing
+    //routing
     $stateProvider
       .state('app', {
         url: '/app',
         abstract: true,
         templateUrl: 'main/templates/sidebar.html',
         controller: 'MainCtrl',
-        data : {
+        data: {
           pageTitle: 'Main',
           requiresLogin: true
         }

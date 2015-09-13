@@ -7,17 +7,15 @@ angular.module('login', [
 ])
   .config(function ($stateProvider) {
 
-    console.log('Allo! Allo from your module: ' + 'login');
-
-    // some basic routing
+    //routing
     $stateProvider
-      .state('app.login', {
+      .state('login', {
         url: '/login',
         templateUrl: 'login/templates/login.html',
         controller: 'LoginCtrl',
         data: {
           pageTitle: 'Welcome',
-          requiresLogin : false
+          requiresLogin: false
         }
       })
       .state('app.logout', {

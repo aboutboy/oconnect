@@ -1,20 +1,37 @@
-<div class="">
+<div class="oc-login" md-theme="login">
     <div layout="column">
-        <md-content>
-            <form style="padding: 20px;">
-                <div class="row">
-                    <md-input-container><label>User Name</label><input ng-model="user.name"/>
-                    </md-input-container>
-                </div>
-                <div class="row">
-                    <md-input-container><label>Password</label><input ng-model="user.password" type="password"/></md-input-container>
-                </div>
-                <div class="row">
-                    <md-input-container>
-                        <md-button class="md-raised md-primary" ng-click="login()">Login</md-button>
-                    </md-input-container>
-                </div>
-            </form>
-        </md-content>
+
+        <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+            <img class="logo" src="login/assets/images/icon.png" alt=""/>
+            <h2>Oconnect</h2>
+        </section>
+
+        <!--</div>-->
+        <form class="oc-login-form">
+            <div class="row">
+                <md-input-container>
+                    <label>Router IP</label>
+                    <input ng-model="host" name="host"/>
+                </md-input-container>
+            </div>
+            <div class="row">
+                <md-input-container>
+                    <label>Username</label>
+                    <input ng-model="user.name" name="username"/>
+                </md-input-container>
+            </div>
+            <div class="row">
+                <md-input-container>
+                    <label>Password</label>
+                    <input ng-model="user.password" type="password" name="password"/>
+                </md-input-container>
+            </div>
+            <div class="row">
+                <md-input-container>
+                    <md-button class="md-raised md-accent oc-btn" ng-click="login()">Login</md-button>
+                    <p class="text-center">Need help? <a href="#">Click Here</a></p>
+                </md-input-container>
+            </div>
+        </form>
     </div>
 </div>

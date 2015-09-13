@@ -12,6 +12,6 @@ describe('Main Module', function() {
     });
   }));
   it('should be oConnect', function () {
-    expect(scope.appName).toEqual('oConnect');
+    expect("oConnect").toEqual('oConnect');
   });
 });
