@@ -1,0 +1,36 @@
+.oc-network  {
+  list-style: none;
+  min-height: 350px;
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 0;
+  -webkit-padding-start:0;
+  padding-top: 50px;
+  li {
+    float: left;
+    display: block;
+    border: 1px solid black;
+    border-radius: 100%;
+    padding: 10px;
+    height: 40px;
+    width: 40px;
+    color: white;
+    background: black;
+    margin: 10px;
+    line-height: 1.5;
+    &:empty {
+      display: none;
+    }
+    ul {
+      position: absolute;
+      top: 1px;
+      margin-left: 30px;
+      li {
+        float: none;
+      }
+    }
+  }
+
+}
+.oc-overview {
+  position: relative;
+}
