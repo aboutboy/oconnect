@@ -5,11 +5,7 @@ angular.module('main', [
   'ngMaterial',
   'angular-storage'
 ])
-  .config(function ($stateProvider, $mdThemingProvider) {
-
-    $mdThemingProvider.theme('default')
-      .primaryPalette('teal')
-      .accentPalette('teal');
+  .config(function ($stateProvider) {
 
     //routing
     $stateProvider
