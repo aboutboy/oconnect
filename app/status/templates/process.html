@@ -1,2 +1,7 @@
 <div class="md-padding">
+    <h3>Process</h3>
+    <div ng-repeat="p in process track by $index">
+        <p ng-show="p">USER {{p.USER}} | PID {{p.PID}} | COMMAND {{p.COMMAND}}</p>
+    </div>
+
 </div>
