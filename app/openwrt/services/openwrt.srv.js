@@ -7,12 +7,12 @@
 angular.module('openwrt').factory('Owrt', function ($http, store) {
   var baseUrl = store.get('host');
 
+  //Check if hostname contains http:// url scheme
   if (!(/^htt(p|ps):\/\//).test(baseUrl)) {
     baseUrl = 'http://' + baseUrl;
   }
 
   var rpc = function (module) {
-    //Check if hostname contains http:// url scheme
     return baseUrl + '/cgi-bin/luci/rpc/' + module;
   };
 
@@ -23,6 +23,8 @@ angular.module('openwrt').factory('Owrt', function ($http, store) {
         method: 'POST',
         url: rpc(module),
         data: {
+          "jsonrpc": "2.0",
+          'id' : Date.now(),
           'method': func,
           'params': params
         }
