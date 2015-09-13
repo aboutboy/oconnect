@@ -5,8 +5,10 @@ angular.module('oc', [
   'login',
   'status',
   'ui.router',
-  'angular-storage'
-]).config(function ($urlRouterProvider) {
+  'angular-storage',
+  'ngMaterial'
+]).config(function ($urlRouterProvider, $mdThemingProvider) {
+  //Global APP CONFIG
   //$urlRouterProvider.otherwise('/app/status');
   //https://github.com/angular-ui/ui-router/issues/600
 
@@ -14,6 +16,27 @@ angular.module('oc', [
     var $state = $injector.get('$state');
     $state.go('app.status');
   });
+
+  //New "White palette" by extending grey
+  var white = $mdThemingProvider.extendPalette('grey', {
+    '500': 'ffffff'
+  });
+  $mdThemingProvider.definePalette('white', white);
+
+  //Login Theme use: <div md-theme="login"> directive
+  $mdThemingProvider.theme('login')
+    .primaryPalette('white', {
+      'default': '500'
+    })
+    .accentPalette('teal', {
+      'default': '500'
+    });
+
+  //Default Theme
+  $mdThemingProvider.theme('default')
+    .primaryPalette('teal')
+    .accentPalette('white');
+  //End Config
 }).run(function ($rootScope, store, $state) {
   //Set page title on route change
   $rootScope.$on('$stateChangeStart', function (e, nextstate) {
@@ -34,3 +57,4 @@ angular.module('oc', [
     }
   });
 });
+//TODO: USE $log instead of console.log
