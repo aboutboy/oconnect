@@ -11,8 +11,10 @@ angular.module('openwrt').factory('Owrt', function ($http, store) {
   if (!(/^htt(p|ps):\/\//).test(baseUrl)) {
     baseUrl = 'http://' + baseUrl;
   }
+  console.log(baseUrl);
 
   var rpc = function (module) {
+    console.log(module, ' on ',baseUrl);
     return baseUrl + '/cgi-bin/luci/rpc/' + module;
   };
 
