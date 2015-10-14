@@ -19,7 +19,7 @@ angular.module('openwrt').factory('Owrt', function ($http, store) {
   };
 
   return {
-    //RPC service vi Owrt.rpc()
+    //RPC service via Owrt.rpc()
     rpc: function (module, func, params) {
       return $http({
         method: 'POST',
