@@ -7,7 +7,12 @@ OpenWRT router management at your finger tips.
 # What's going on?
  * Android Support Only
  * Pre Alpha State
-  
+
+# Sneak Peek
+
+![](http://i.imgur.com/KP4vJ3v.png?s) ![](http://i.imgur.com/F3KG88w.png?s) ![](http://i.imgur.com/XaM0935.png?s)
+
+
 # Public release
 
 There is no public release available yet. If you are interested at testing please build one your self or drop a mail at <ocbeta@vert.agency>
