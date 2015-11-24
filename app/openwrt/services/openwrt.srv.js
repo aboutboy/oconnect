@@ -5,15 +5,15 @@
 
 'use strict';
 angular.module('openwrt').factory('Owrt', function ($http, store) {
-  var baseUrl = store.get('host');
 
   //Check if hostname contains http:// url scheme
-  if (!(/^htt(p|ps):\/\//).test(baseUrl)) {
-    baseUrl = 'http://' + baseUrl;
-  }
-  console.log(baseUrl);
 
   var rpc = function (module) {
+    var baseUrl = store.get('host');
+    //Check if host name contains any protocol
+    if (!(/^htt(p|ps):\/\//).test(baseUrl)) {
+      baseUrl = 'http://' + baseUrl;
+    }
     console.log(module, ' on ',baseUrl);
     return baseUrl + '/cgi-bin/luci/rpc/' + module;
   };
